@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useEffect,useState } from "react";
+import "./App.css"
 
-function App() {
-  return (
+import Summary from "./Summary";
+import {Route,Routes} from 'react-router-dom'
+import Form from "./Form";
+import Home from "./Home"
+
+
+export default function App(){
+  
+  const [apiData,setApiData]=useState("");
+  var serverlUrl="https://api.tvmaze.com/search/shows?q=all"
+  useEffect(()=>{
+    fetch(serverlUrl).then(response=>response.json())
+    .then(data=>{
+      setApiData(data)
+    })
+  },[serverlUrl])
+  
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Routes>
+        <Route path="/" exact element={<Home list={apiData}/>}/>
+        <Route path="/data/:id" element={<Summary list={apiData}/>}/>
+        <Route path="/form/:id" element={<Form list={apiData}/>}/>
+      </Routes>
+    </div> 
+  )
 }
 
-export default App;
