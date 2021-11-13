@@ -1,6 +1,8 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@400;500&family=Ubuntu:ital,wght@0,400;0,500;1,500&display=swap');
+*{
+  font-family: 'Ubuntu', sans-serif;
 }
+
 
 button{
   padding: 0.6rem 2rem;

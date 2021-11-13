@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css"
-
+import Header from "./Component/Header";
 import Summary from "./Component/Summary";
 import { Route, Routes } from 'react-router-dom'
-import Form from "./Component/Form";
-import Home from "./Component/Home"
 
+import Home from "./Component/Home"
 
 export default function App() {
 
@@ -19,13 +18,14 @@ export default function App() {
   }, [serverlUrl])
 
   return (
-    <div className="App">
+    <div>
+    <Header/>
       <Routes>
         <Route path="/" exact element={<Home list={apiData} />} />
         <Route path="/data/:id" element={<Summary list={apiData} />} />
-        <Route path="/form/:id" element={<Form list={apiData} />} />
       </Routes>
-    </div>
+      </div>
+   
   )
 }
 

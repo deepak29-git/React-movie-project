@@ -1,11 +1,4 @@
-button{
-    padding: 0.6rem 2rem;
-    background-color: rgb(1, 119, 119);
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-  }
-  button:hover{
-    background-color: rgb(6, 177, 177);;
-  }
+
+.bold-text{
+    font-weight: bold;
+}
