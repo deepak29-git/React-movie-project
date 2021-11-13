@@ -15,8 +15,8 @@ function Summary({ list }) {
     return (
         <>
           <Container fluid>
-
-            <Image src={data.show.image.medium} alt="" thumbnail />
+            <Image src={data.show.image.medium} alt={data.show.name} thumbnail />
+              <h1>{data.show.name}</h1>
             <div >
             <small className="movie-details"><span className="bold-text">Language:  </span>{data.show.language}</small><br />
             <small className="movie-details"><span className="bold-text">Genres:  </span>  {data.show.genres}</small><br />
@@ -24,7 +24,7 @@ function Summary({ list }) {
             <small className="movie-details"><span className="bold-text">Status:  </span> <span style={{color:color}}>{data.show.status}</span> </small><br />
             <small className="movie-details"><span className="bold-text">Release Date:   </span> {data.show.premiered}</small><br />
             <p > <span className="bold-text" style={{textDecoration:"none"}}>Summary: </span>{data.show.summary}</p>
-            <Button variant="danger" onClick={()=>setShow(true)}>Book Ticket</Button>
+            <Button variant="danger" style={{marginBottom:"1rem"}} onClick={()=>setShow(true)}>Book Ticket</Button>
             
            
             </div>
