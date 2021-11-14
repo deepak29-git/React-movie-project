@@ -2,3 +2,10 @@
 .bold-text{
     font-weight: bold;
 }
+.goBackBtn{
+    text-decoration: none;
+    color: white;
+}
+.goBackBtn:hover{
+    color: white;
+}

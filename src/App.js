@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css"
 import Header from "./Component/Header";
 import Summary from "./Component/Summary";
-import { Route, Routes } from 'react-router-dom'
-
+import { Routes, Route } from 'react-router-dom'
 import Home from "./Component/Home"
 
 export default function App() {
@@ -19,13 +18,13 @@ export default function App() {
 
   return (
     <div>
-    <Header/>
+      <Header />
       <Routes>
         <Route path="/" exact element={<Home list={apiData} />} />
         <Route path="/data/:id" element={<Summary list={apiData} />} />
       </Routes>
-      </div>
-   
+    </div>
+
   )
 }
 
