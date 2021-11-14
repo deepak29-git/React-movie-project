@@ -21,11 +21,11 @@ function Summary({ list }) {
                     <small className="movie-details"><span className="bold-text">Status:  </span> <span style={{ color: color }}>{data.show.status}</span> </small><br />
                     <small className="movie-details"><span className="bold-text">Release Date:   </span> {data.show.premiered}</small><br />
                     <p > <span className="bold-text" style={{ textDecoration: "none" }}>Summary: </span>{data.show.summary}</p>
-                    <Button variant="danger"><Link className="goBackBtn" to="/">go back</Link></Button>
+                    <Button variant="danger"><Link className="goBackBtn" to="/">Go Back</Link></Button>
                     <Button variant="danger" style={{ marginBottom: "1rem",marginLeft:"1rem",marginTop:"1rem" }} onClick={() => setShow(true)}>Book Ticket</Button>
                 </div>
             </Container>
-            
+
             <Modal backdrop="static" keyboard={false} show={show} onHide={() => setShow(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Book Movie Ticket <h3 style={{ color: "red" }}>{data.show.name}</h3></Modal.Title>
